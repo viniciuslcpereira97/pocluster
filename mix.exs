@@ -20,7 +20,9 @@ defmodule Pocluster.Umbrella.MixProject do
   end
 
   defp deps do
-    []
+    [
+      {:libcluster, "~> 3.3"}
+    ]
   end
 
   defp aliases do
