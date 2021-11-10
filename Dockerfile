@@ -7,13 +7,11 @@ WORKDIR /app
 RUN mix do local.hex --force, local.rebar --force
 
 # get mix dependencies
-COPY mix.exs mix.lock ./
-COPY config config
+COPY . ./
 RUN mix deps.get
 
 # compile dependencies
 RUN mix deps.compile
 
 # compile app
-COPY . ./
-RUN mix do compile --warnings-as-errors, release
+RUN mix compile --warnings-as-errors
