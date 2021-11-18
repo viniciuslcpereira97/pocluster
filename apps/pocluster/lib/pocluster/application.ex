@@ -7,7 +7,11 @@ defmodule Pocluster.Application do
   def start(_type, _args) do
     topologies = [
       jobs: [
-        strategy: Cluster.Strategy.Gossip
+        strategy: Cluster.Strategy.Kubernetes.DNS,
+        config: [
+          service: "cache-nodes",
+          application_name: "cache"
+        ]
       ]
     ]
 

@@ -20,14 +20,11 @@ defmodule Pocluster.Umbrella.MixProject do
   end
 
   defp deps do
-    [
-      {:libcluster, "~> 3.3"}
-    ]
+    []
   end
 
   defp aliases do
     [
-      # run `mix setup` in all child apps
       setup: ["cmd mix setup"]
     ]
   end
